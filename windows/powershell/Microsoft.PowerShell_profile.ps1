@@ -1,5 +1,5 @@
 # Load Oh My Posh theme
-oh-my-posh init pwsh --config "$HOME\oh-my-posh\powerlevel10k.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$HOME\dotfiles\oh-my-posh\powerlevel10k.omp.json" | Invoke-Expression
 
 # Import terminal icons
 Import-Module -Name Terminal-Icons -ErrorAction SilentlyContinue
