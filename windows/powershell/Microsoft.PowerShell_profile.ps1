@@ -12,15 +12,8 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 # Linux-style shell aliases
-Set-Alias ls Get-ChildItem
 Set-Alias ll "Get-ChildItem -Force -l"
 Set-Alias la "Get-ChildItem -Force -a"
-Set-Alias cat Get-Content
-Set-Alias rm Remove-Item
-Set-Alias mv Move-Item
-Set-Alias cp Copy-Item
-Set-Alias pwd Get-Location
-Set-Alias clear Clear-Host
 
 # Archive helper
 Set-Alias xzip Expand-Archive
@@ -31,13 +24,13 @@ Set-Alias vim nvim
 Set-Alias vi nvim
 
 # Git shortcuts
-Set-Alias gs git status
-Set-Alias ga git add
-Set-Alias gc git commit
-Set-Alias gp git push
-Set-Alias gl git log
-Set-Alias gd git diff
-Set-Alias gb git branch
-Set-Alias gco git checkout
-Set-Alias gst git stash
-Set-Alias gr git remote
+function gs { git status }
+function ga { git add @args }
+function gc { git commit @args }
+function gp { git push @args }
+function gl { git log @args }
+function gd { git diff @args }
+function gb { git branch @args }
+function gco { git checkout @args }
+function gst { git stash @args }
+function gr { git remote @args }
