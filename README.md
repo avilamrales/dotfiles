@@ -29,15 +29,43 @@
 
 ## ⚙️ How to Use
 
-On a fresh machine (with PowerShell Core):
+Set this up on a fresh machine:
+
+### Option 1: Download ZIP
+
+1. Download the latest `.zip` from https://github.com/avilamrales/dotfiles
+
+2. Open **PowerShell as Administrator**, and extract the contents to: `$HOME/dotfiles`
 
 ```powershell
-git clone https://github.com/your-username/dotfiles
-cd dotfiles
-./install-dev-env.ps1
+Expand-Archive -Path $HOME\Downloads\dotfiles-main.zip -DestinationPath $HOME
+Rename-Item -Path "$HOME\dotfiles-main" -NewName "dotfiles"
 ```
 
-✅ Make sure you run PowerShell as administrator
+### Option 2: Clone via Git (If git is available)
+
+💡 If Git is not installed, the script will install it automatically.
+
+1. Open **PowerShell as Administrator**, then run the next command to clone the `dotfiles` folder:
+
+```powershell
+git clone https://github.com/avilamrales/dotfiles $HOME/dotfiles
+```
+
+### Run the Setup
+
+1. Temporarily allow script execution:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+2. Run the installation script:
+
+```powershell
+cd $HOME
+dotfiles/install-dev-env.ps1
+```
 
 ---
 
