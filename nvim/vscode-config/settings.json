@@ -2,7 +2,7 @@
   // ===== EDITOR =====
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.fontFamily": "Hack Nerd Font",
+  "editor.fontFamily": "Hack Nerd Font Mono",
   "editor.fontLigatures": false,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
