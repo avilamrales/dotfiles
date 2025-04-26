@@ -350,7 +350,30 @@ else {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 11. Apply VS Code settings + keybindings
+# 11. Install Essential Developer Tools
+$devTools = @(
+    "Git.Git",
+    "OpenJS.NodeJS.LTS",
+    "Python.Python.3.13",
+    "7zip.7zip",
+    "BurntSushi.ripgrep.GNU",
+    "sharkdp.fd",
+    "Casey.Just"
+)
+
+Write-Host @"
+
+🧰 Installing essential developer tools...
+"@
+foreach ($tool in $devTools) {
+    Install-App $tool
+}
+Write-Host @"
+✅ Dev tools installation complete.
+"@
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 12. Apply VS Code settings + keybindings
 $vsCodeSource = "$PSScriptRoot\nvim\vscode-config"
 $vsUserSettings = "$env:APPDATA\Code\User"
 
@@ -388,7 +411,7 @@ else {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 12. Install VS Code extensions
+# 13. Install VS Code extensions
 if (Test-Path "$vsCodeSource\extensions.txt") {
     $extensions = Get-Content "$vsCodeSource\extensions.txt"
     foreach ($ext in $extensions) {
@@ -413,30 +436,6 @@ else {
 ⚠️ extensions.txt not found in vscode-config.
 "@
 }
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# 13. Install Essential Developer Tools
-$devTools = @(
-    "Git.Git",
-    "OpenJS.NodeJS.LTS",
-    "Python.Python.3.13",
-    "7zip.7zip",
-    "BurntSushi.ripgrep.GNU",
-    "sharkdp.fd",
-    "Casey.Just"
-)
-
-Write-Host @"
-
-🧰 Installing essential developer tools...
-"@
-foreach ($tool in $devTools) {
-    Install-App $tool
-}
-Write-Host @"
-✅ Dev tools installation complete.
-"@
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 14. (Optional) chezmoi
