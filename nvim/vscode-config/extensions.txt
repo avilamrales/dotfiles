@@ -17,4 +17,3 @@ pkief.material-icon-theme
 proxzima.sweetdracula
 rangav.vscode-thunder-client
 vspacecode.whichkey
-ms-vscode.powershell
