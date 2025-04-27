@@ -9,7 +9,10 @@ bootstrap:
 
 # Sync Neovim config only
 sync-nvim:
+    @Remove-Item -Recurse -Force "$env:LOCALAPPDATA\\nvim"
+    @nvim --headless +"qa"
     @cp -r ./nvim "$env:LOCALAPPDATA\\nvim" -Force
+    @nvim +"Lazy sync" +"qa"
 
 # Re-apply VS Code settings + extensions
 sync-vscode:
