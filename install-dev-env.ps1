@@ -358,7 +358,8 @@ $devTools = @(
     "7zip.7zip",
     "BurntSushi.ripgrep.GNU",
     "sharkdp.fd",
-    "Casey.Just"
+    "Casey.Just",
+    "pnpm.pnpm"
 )
 
 Write-Host @"
