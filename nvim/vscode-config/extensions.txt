@@ -1,4 +1,5 @@
 aaron-bond.better-comments
+astro-build.astro-vscode
 asvetliakov.vscode-neovim
 bradlc.vscode-tailwindcss
 dbaeumer.vscode-eslint
