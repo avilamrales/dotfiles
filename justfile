@@ -1,26 +1,36 @@
-# justfile 🧰 task runner for dotfiles
+# justfile 🧰 task runner for dotfiles (Windows)
 
-# Use latest PowerShell Core
-set shell := ["pwsh", "-NoProfile", "-Command"]
+# Always run scripts with PowerShell Core + process-scoped ExecutionPolicy bypass
+set shell := ["pwsh", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
 
-# Runs full PowerShell bootstrap setup
 bootstrap:
-    @./install-dev-env.ps1
+    @./scripts/bootstrap.ps1
 
-# Sync Neovim config only
-sync-nvim:
-    @Remove-Item -Recurse -Force "$env:LOCALAPPDATA\\nvim"
-    @nvim --headless +"qa"
-    @cp -r ./nvim "$env:LOCALAPPDATA\\nvim" -Force
-    @nvim +"Lazy sync" +"qa"
+# Ensures winget exists (mostly useful for troubleshooting)
+winget:
+    @./scripts/00-winget.ps1
 
-# Re-apply VS Code settings + extensions
-sync-vscode:
-    @cp ./nvim/vscode-config/settings.json "$env:APPDATA\\Code\\User\\settings.json"
-    @cp ./nvim/vscode-config/keybindings.json "$env:APPDATA\\Code\\User\\keybindings.json"
-    @Get-Content ./nvim/vscode-config/extensions.txt | ForEach-Object { code --install-extension $_ }
+# Installs your regular apps/tools (NOT part of minimal bootstrap)
+apps:
+    @./scripts/10-ensure-apps.ps1
 
-# Show basic info
-# info:
-#    @Write-Host "Dotfiles installed via PowerShell Core"
-#    @Write-Host "Fonts, VS Code, Neovim, PowerShell profile, Terminal config"
+terminal:
+    @./scripts/20-terminal.ps1
+
+profile:
+    @./scripts/30-powershell-profile.ps1
+
+fonts:
+    @./scripts/40-fonts.ps1
+
+vscode:
+    @./scripts/50-vscode.ps1
+
+nvim:
+    @./scripts/60-nvim.ps1
+
+all:
+    @just apps
+    @just terminal
+    @just profile
+    @just fonts
