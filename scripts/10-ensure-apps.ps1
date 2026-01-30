@@ -6,10 +6,17 @@ Log-Info "Installing / Updating commonly used apps and developer tools..."
 
 # Apps you had (and a couple you referenced)
 $apps = @(
-    "Microsoft.WindowsTerminal",
+     "Microsoft.WindowsTerminal",
     "Microsoft.VisualStudioCode",
     "JanDeDobbeleer.OhMyPosh",
     "Neovim.Neovim",
+
+    # Browser / VPN / focus
+    "Google.Chrome",
+    "Proton.ProtonVPN",
+    "Proton.ProtonPass",
+    "ColdTurkeySoftware.ColdTurkeyBlocker",
+    "Figma.Figma",
 
     # Dev tools
     "Git.Git",
