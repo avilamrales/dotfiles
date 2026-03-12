@@ -7,6 +7,10 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
 
+  "security.allowedUNCHosts": [
+        "wsl.localhost"
+  ],
+
   // Core editor behavior
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
@@ -211,8 +215,10 @@
     "kk": { "command": "vscode-neovim.escape" },
     "kj": { "command": "vscode-neovim.escape" }
   },
-  "vscode-neovim.neovimExecutablePaths.win32": "C:/Program Files/Neovim/bin/nvim.exe",
-  "vscode-neovim.neovimInitVimPaths.win32": "C:/Users/jesus/AppData/Local/nvim/init.lua",
+
+  "vscode-neovim.neovimExecutablePaths.linux": "/snap/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua",
+
   "vscode-neovim.neovimWidth": 200,
 
   // ============================================================================

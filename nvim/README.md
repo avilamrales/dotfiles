@@ -1,8 +1,6 @@
-![Neovim](./neovim.png)
-
 ## Vscode
 
-Copy ```settings.json``` and ```keybindings.json``` from one of the vscode folders to the respective config files on your vscode.
+Copy ```settings.json``` and ```keybindings.json``` from the vscode folder to the respective config files on your vscode.
 and then install the 
 [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey)
 and

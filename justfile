@@ -26,11 +26,9 @@ fonts:
 vscode:
     @./scripts/50-vscode.ps1
 
-nvim:
-    @./scripts/60-nvim.ps1
-
 all:
     @just apps
     @just terminal
     @just profile
     @just fonts
+    @just vscode
