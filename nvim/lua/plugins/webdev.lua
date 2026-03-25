@@ -29,24 +29,35 @@ return {
   },
 
   -- Add inline colors to tailwind classes
-  {
-    "themaxmarchuk/tailwindcss-colors.nvim",
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        tailwindcss = {
-          on_attach = function(_, bufnr)
-            local ok, colors = pcall(require, "tailwindcss-colors")
-            if ok then
-              colors.buf_attach(bufnr)
-            end
-          end,
-        },
-      },
-    },
-  },
+  --
+  -- {
+  --   "nvim-mini/mini.hipatterns",
+  --   opts = function(_, opts)
+  --     opts.tailwind = {
+  --       enabled = false,
+  --     }
+  --   end,
+  -- },
+  --
+  -- {
+  --   "themaxmarchuk/tailwindcss-colors.nvim",
+  --   opts = {},
+  -- },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       tailwindcss = {
+  --         on_attach = function(_, bufnr)
+  --           local ok, colors = pcall(require, "tailwindcss-colors")
+  --           if ok then
+  --             colors.buf_attach(bufnr)
+  --           end
+  --         end,
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- Config Picker & Explorer
   {
